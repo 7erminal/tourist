@@ -1,6 +1,10 @@
 @import './_variables'
 @import './_mixins'
 
+$breakpoint-tablet: 768px
+$breakpoint-phone: 481px
+$breakpoint-desktop: 900px
+
 *
   box-sizing: border-box
   outline: none
@@ -20,6 +24,10 @@ body
   background-color: $main-background-color
   font-size: $main-text-size
 
+.homeNav
+  background-color: rgba(0, 0, 0, .25)
+  color: white
+
 .navLink
   color: #566573
   text-decoration: none
@@ -38,6 +46,28 @@ body
 
 .navLink:visited
   color: #566573
+
+.navLink2
+  color: #ffffff
+  text-decoration: none
+  cursor: pointer
+  transition: 0.4s ease
+
+.navLink2:link
+  color: #ffffff
+  text-decoration: none
+
+.navLink2:active
+  color: #dcdcdc
+  text-decoration: none
+
+.navLink2:hover
+  color: #b6dcff
+  text-decoration: none
+  transition: 0.4s ease
+
+.navLink2:visited
+  color: #f1f8ff
 
 code 
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
@@ -60,19 +90,25 @@ code
   border-radius: 5px
 
 .spinner
-  width: 400px
-  height: 400px
+  width: 200px
+  height: 200px
   border-radius: 50%
   position: relative
   border: 2px dashed #E87F1E
+  // left: 25%
+  margin: auto
+  z-index: 1
+  @media only screen and (min-width: $breakpoint-phone)
+    width: 350px
+    height: 350px
 
 .spin-position
   top: 40px
   position: relative
 
 .circleIcon
-  width: 100px
-  height: 100px
+  width: 90px
+  height: 90px
   /* background: #F06A66;  */
   position: absolute
   border-radius: 50%
@@ -80,8 +116,11 @@ code
   top: 50%
   margin-left: -50px
   margin-top: -50px
-  z-index: 4
+  z-index: 2
   overflow: hidden
+  @media only screen and (min-width: $breakpoint-phone)
+    width: 100px
+    height: 100px
 
 .circleIcon img
   width: 100%
@@ -89,19 +128,36 @@ code
 
 .spinner
   .circleIcon:nth-child(1)
-    transform: rotate(0deg) translate(200px)
+    transform: rotate(0deg) translate(100px)
+  @media only screen and (min-width: $breakpoint-phone)
+    .circleIcon:nth-child(1)
+      transform: rotate(0deg) translate(175px)
 
 .spinner
   .circleIcon:nth-child(2)
-    transform: rotate(90deg) translate(200px)
+    transform: rotate(90deg) translate(100px)
+  @media only screen and (min-width: $breakpoint-phone)
+    .circleIcon:nth-child(2)
+      transform: rotate(90deg) translate(175px)
 
 .spinner
   .circleIcon:nth-child(3)
-    transform: rotate(180deg) translate(200px)
+    transform: rotate(180deg) translate(100px)
+  @media only screen and (min-width: $breakpoint-phone)
+    .circleIcon:nth-child(3)
+      transform: rotate(180deg) translate(175px)
 
 .spinner
   .circleIcon:nth-child(4)
-    transform: rotate(270deg) translate(200px)
+    transform: rotate(270deg) translate(100px)
+  @media only screen and (min-width: $breakpoint-phone)
+    .circleIcon:nth-child(4)
+      transform: rotate(270deg) translate(175px)
+
+.zanzibar-text
+  z-index: 3
+  background-color: white
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset
 
 .centerDiv
   position: absolute
@@ -109,21 +165,32 @@ code
   top: 50%
   transform: translate(-50%, -50%)
 
+.info-link
+  transition: 0.4s ease
+
+
 .info-link:hover
   cursor: pointer
+  color: #808B96
+  transition: 0.4s ease
 
 .bigger-rounder-image
-  width: 390px
-  height: 390px
+  width: 350px
+  height: 350px
   // border: 1px solid black
   position: relative
   border-radius: 50%
-  top: 50px
-  z-index: 3
+  margin: auto
+  top: 0px
+  z-index: 2
+  @media only screen and (min-width: $breakpoint-phone)
+    width: 300px
+    height: 300px
+    top: 50px
 
 .circleIcon2
-  width: 100px
-  height: 100px
+  width: 70px
+  height: 70px
   /* background: #F06A66;  */
   position: absolute
   border-radius: 50%
@@ -133,6 +200,9 @@ code
   margin-top: -50px
   z-index: 1
   overflow: hidden
+  @media only screen and (min-width: $breakpoint-phone)
+    width: 90px
+    height: 90px
 
 .circleIcon2
   img
@@ -142,24 +212,36 @@ code
 
 .bigger-rounder-image
   .circleIcon2:nth-child(0)
-    transform: rotate(0deg) translate(200px)
+    transform: rotate(0deg) translate(140px)
     display: none
+  @media only screen and (min-width: $breakpoint-phone)
+    .circleIcon2:nth-child(0)
+      transform: rotate(0deg) translate(150px)
 
 .bigger-rounder-image
   .circleIcon2:nth-child(2)
-    transform: rotate(90deg) translate(200px)
+    transform: rotate(90deg) translate(140px)
+  @media only screen and (min-width: $breakpoint-phone)
+    .circleIcon2:nth-child(2)
+      transform: rotate(90deg) translate(150px)
 
 .bigger-rounder-image
   .circleIcon2:nth-child(3)
-    transform: rotate(160deg) translate(200px)
+    transform: rotate(160deg) translate(140px)
+  @media only screen and (min-width: $breakpoint-phone)
+    .circleIcon2:nth-child(3)
+      transform: rotate(160deg) translate(150px)
 
 .bigger-rounder-image
   .circleIcon2:nth-child(4)
-    transform: rotate(20deg) translate(200px)
+    transform: rotate(20deg) translate(140px)
+  @media only screen and (min-width: $breakpoint-phone)
+    .circleIcon2:nth-child(4)
+      transform: rotate(20deg) translate(150px)
 
 .rounded-image
-  width: 300px
-  height: 300px
+  width: 160px
+  height: 160px
   border-radius: 50%
   position: relative
   overflow: hidden
@@ -167,6 +249,9 @@ code
   top: 40%
   transform: translate(-50%, -50%)
   z-index: 3
+  @media only screen and (min-width: $breakpoint-phone)
+    width: 200px
+    height: 200px
 
 .gallery-img-container
   width: 90%
@@ -174,7 +259,38 @@ code
   border-radius: 3px
   overflow: hidden
 
+.gallery-img-container
+  img
+    transition: all 0.5s ease
+
+.gallery-img-container:hover
+  cursor: pointer
+
+.gallery-img-container:hover
+  img
+    filter: brightness(70%)
+    transition: all 1s ease
 .footer
   position: relative
   width: 100%
   height: 400px
+
+.my-masonry-grid
+  // display: -webkit-box;
+  // display: -ms-flexbox; 
+  display: flex
+  margin-left: -30px
+  width: auto
+
+.my-masonry-grid_column 
+  padding-left: 30px
+  background-clip: padding-box
+
+
+/* Style your items */
+.my-masonry-grid_column 
+  .gallery-img-container 
+    /* change div to reference your elements you put in <Masonry> */
+    background: grey
+    margin-bottom: 30px
+

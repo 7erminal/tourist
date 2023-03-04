@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 
 const Mikumi: React.FC = () => {
     return <Row>
+        <Row className='my-4'><h2>3DAYS AND 2NIGHTS  LODGE SAFARI FROM ZANZIBAR TO MIKUMI NATIONAL PARK</h2></Row>
         <Col md={5} sm={11}>
             <Row>
                 <Col>
@@ -30,8 +31,7 @@ const Mikumi: React.FC = () => {
                 </Col>
             </Row>
         </Col>
-        <Col md={7} sm={12}>
-            <h2>3DAYS AND 2NIGHTS  LODGE SAFARI FROM ZANZIBAR TO MIKUMI NATIONAL PARK</h2>
+        <Col md={7} sm={12} className='zanzibar-text'>
             <p>
                 <b>Day 1</b>: ( From Zanzibar to Massai Village)
 Pick up at your hotel and drive to Stone town for your Boat to Dar es salaam and drive to Mikumi National park. On the way will stop for lunch and After lunch

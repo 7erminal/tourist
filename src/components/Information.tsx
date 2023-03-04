@@ -10,8 +10,9 @@ const Information: React.FC = () => {
       });
 
     return <Row>
+            <Row className='my-2' style={{textAlign: 'center'}}><h2>BEKA ZANZIBAR TOUR AND SAFARI</h2></Row>
             <Col md={5} sm={11}>
-                <Row className='spin-position'>
+                <Row className='spin-position my-4'>
                     <Col>
                         <div ref={parallax.ref} className="spinner">
                             <div className="circleIcon">
@@ -29,7 +30,7 @@ const Information: React.FC = () => {
                         </div>
                     </Col>
                 </Row>
-                <Row style={{paddingTop: '130px'}}>
+                <Row style={{paddingTop: '130px'}} className="mb-4">
                     <Col md={6} sm={6} xs={6} className='mt-1'>
                         <img src="/images/b66f8043-1daf-4d6e-800c-837df30adb3d.JPG" width='100%' className="info-pics" />
                     </Col>
@@ -44,12 +45,11 @@ const Information: React.FC = () => {
                     </Col>
                 </Row>
             </Col>
-            <Col md={7} sm={12}>
-                <h2>BEKA ZANZIBAR TOUR AND SAFARI</h2>
+            <Col className="zanzibar-text" md={7} sm={12}>
                 <p> 
                     EXCURSION PACKAGE 06 DAYS ON THE ISLAND OF ZANZIBAR: (Discover all the incredible places of Zanzibar with this package)
                 </p>
-                <h3>ITENERARY</h3>
+                <h4>ITENERARY</h4>
                 <p>
                     DAY 01 #mnembaisland #dolphin & #snorkeling
                 </p>

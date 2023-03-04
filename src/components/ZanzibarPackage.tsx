@@ -42,8 +42,8 @@ Morning at 8:00am pick up from the hotel for dolphin tour where you will see and
 Pick up from the hotel to Zanzibar airport for flight back to your country
         </Col>
         <Col md={12} sm={12} style={{paddingTop: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <video controls autoPlay muted width='400px' >
-                <source src='/images/7d065012-3ae2-421e-b2af-4f7c1da53a27.MP4' type="video/mp4" />
+            <video controls autoPlay muted width='400px' preload="metadata">
+                <source src='/images/7d065012-3ae2-421e-b2af-4f7c1da53a27.MP4#t=0.5' type="video/mp4" />
             </video>
         </Col>
     </Row>
