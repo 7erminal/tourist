@@ -9,7 +9,6 @@ import Modal from 'react-bootstrap/Modal';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from "react-router-dom"
-import { Slide } from "react-awesome-reveal";
 
 const images = [
     '/images/06480f3c-b05e-445e-9474-30636dc685e4.JPG',
