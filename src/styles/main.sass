@@ -281,10 +281,14 @@ code
   display: flex
   margin-left: -30px
   width: auto
+  @media only screen and (min-width: $breakpoint-phone)
+    margin-left: -20px
 
 .my-masonry-grid_column 
   padding-left: 30px
   background-clip: padding-box
+  @media only screen and (min-width: $breakpoint-phone)
+    padding-left: 20px
 
 
 /* Style your items */
@@ -293,4 +297,8 @@ code
     /* change div to reference your elements you put in <Masonry> */
     background: grey
     margin-bottom: 30px
+  @media only screen and (min-width: $breakpoint-phone)
+    .gallery-img-container 
+      margin-bottom: 10px
+      background: grey
 

@@ -11,8 +11,8 @@ const Information: React.FC = () => {
 
     return <Row>
             <Row className='my-2' style={{textAlign: 'center'}}><h2>BEKA ZANZIBAR TOUR AND SAFARI</h2></Row>
-            <Col md={5} sm={11}>
-                <Row className='spin-position my-4'>
+            <Col md={5} sm={12}>
+                <Row className='spin-position my-4' >
                     <Col>
                         <div ref={parallax.ref} className="spinner">
                             <div className="circleIcon">
