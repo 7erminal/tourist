@@ -40,8 +40,8 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-tourismBackend/node_modules/
 touristsite/node_modules/
+tourismBackend/node_modules/
 
 # TypeScript v1 declaration files
 typings/
