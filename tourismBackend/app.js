@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({
   // origin: 'http://localhost:3001'
-    origin: 'http://2a05:d01c:482:8500:ea7b:1553:fce4:b373'
+    origin: 'http://2a05:d01c:482:8500:ea7b:1553:fce4:b373:3001'
 }));
 
 app.use('/', indexRouter);
