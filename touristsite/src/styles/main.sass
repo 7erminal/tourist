@@ -1,0 +1,394 @@
+@import './_variables'
+@import './_mixins'
+
+$breakpoint-tablet: 768px
+$breakpoint-phone: 481px
+$breakpoint-desktop: 900px
+
+*
+  box-sizing: border-box
+  outline: none
+
+html,
+body
+  height: 100%
+  overflow-x: hidden
+
+body 
+  position: relative
+  margin: 0
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  color: $main-text-color
+  background-color: $main-background-color
+  font-size: $main-text-size
+
+.homeNav
+  background-color: rgba(0, 0, 0, .25)
+  color: white
+
+.navLink
+  color: #566573
+  text-decoration: none
+
+.navLink:link
+  color: #566573
+  text-decoration: none
+
+.navLink:active
+  color: #566573
+  text-decoration: none
+
+.navLink:hover
+  color: #566573
+  text-decoration: none
+
+.navLink:visited
+  color: #566573
+
+.navLink2
+  color: #ffffff
+  text-decoration: none
+  cursor: pointer
+  transition: 0.4s ease
+
+.navLink2:link
+  color: #ffffff
+  text-decoration: none
+
+.navLink2:active
+  color: #dcdcdc
+  text-decoration: none
+
+.navLink2:hover
+  color: #b6dcff
+  text-decoration: none
+  transition: 0.4s ease
+
+.navLink2:visited
+  color: #f1f8ff
+
+.scrolled-down
+  transform:translateY(-100%)
+  transition: all 0.3s ease-in-out
+
+.scrolled-up
+  transform:translateY(0)
+  transition: all 0.3s ease-in-out
+
+
+code 
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
+
+.landing-header
+  position: relative
+  height: 900px
+  width: 100%
+  border-radius: 15px
+  overflow: hidden
+
+.landing-image-box
+  position: relative
+  // height: 200px
+  width: 100%
+  overflow: hidden
+  border-radius: 10px
+
+.info-pics
+  border-radius: 5px
+
+.spinner
+  width: 200px
+  height: 200px
+  border-radius: 50%
+  position: relative
+  border: 2px dashed #E87F1E
+  // left: 25%
+  margin: auto
+  z-index: 1
+  @media only screen and (min-width: $breakpoint-phone)
+    width: 350px
+    height: 350px
+
+.spin-position
+  top: 40px
+  position: relative
+
+.circleIcon
+  width: 90px
+  height: 90px
+  /* background: #F06A66;  */
+  position: absolute
+  border-radius: 50%
+  left: 50%
+  top: 50%
+  margin-left: -50px
+  margin-top: -50px
+  z-index: 2
+  overflow: hidden
+  @media only screen and (min-width: $breakpoint-phone)
+    width: 100px
+    height: 100px
+
+.circleIcon img
+  width: 100%
+
+
+.spinner
+  .circleIcon:nth-child(1)
+    transform: rotate(0deg) translate(100px)
+  @media only screen and (min-width: $breakpoint-phone)
+    .circleIcon:nth-child(1)
+      transform: rotate(0deg) translate(175px)
+
+.spinner
+  .circleIcon:nth-child(2)
+    transform: rotate(90deg) translate(100px)
+  @media only screen and (min-width: $breakpoint-phone)
+    .circleIcon:nth-child(2)
+      transform: rotate(90deg) translate(175px)
+
+.spinner
+  .circleIcon:nth-child(3)
+    transform: rotate(180deg) translate(100px)
+  @media only screen and (min-width: $breakpoint-phone)
+    .circleIcon:nth-child(3)
+      transform: rotate(180deg) translate(175px)
+
+.spinner
+  .circleIcon:nth-child(4)
+    transform: rotate(270deg) translate(100px)
+  @media only screen and (min-width: $breakpoint-phone)
+    .circleIcon:nth-child(4)
+      transform: rotate(270deg) translate(175px)
+
+.zanzibar-text
+  z-index: 3
+  background-color: white
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset
+  padding-top: 10px
+  padding-bottom: 10px
+
+.centerDiv
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+
+.info-link
+  transition: 0.4s ease
+
+
+.info-link:hover
+  cursor: pointer
+  color: #808B96
+  transition: 0.4s ease
+
+.bigger-rounder-image
+  width: 350px
+  height: 350px
+  // border: 1px solid black
+  position: relative
+  border-radius: 50%
+  margin: auto
+  top: 0px
+  z-index: 2
+  @media only screen and (min-width: $breakpoint-phone)
+    width: 300px
+    height: 300px
+    top: 50px
+
+.circleIcon2
+  width: 70px
+  height: 70px
+  /* background: #F06A66;  */
+  position: absolute
+  border-radius: 50%
+  left: 50%
+  top: 50%
+  margin-left: -50px
+  margin-top: -50px
+  z-index: 1
+  overflow: hidden
+  @media only screen and (min-width: $breakpoint-phone)
+    width: 90px
+    height: 90px
+
+.circleIcon2
+  img
+    width: 120%
+    height: 120%
+    position: relative
+
+.bigger-rounder-image
+  .circleIcon2:nth-child(0)
+    transform: rotate(0deg) translate(140px)
+    display: none
+  @media only screen and (min-width: $breakpoint-phone)
+    .circleIcon2:nth-child(0)
+      transform: rotate(0deg) translate(150px)
+
+.bigger-rounder-image
+  .circleIcon2:nth-child(2)
+    transform: rotate(90deg) translate(140px)
+  @media only screen and (min-width: $breakpoint-phone)
+    .circleIcon2:nth-child(2)
+      transform: rotate(90deg) translate(150px)
+
+.bigger-rounder-image
+  .circleIcon2:nth-child(3)
+    transform: rotate(160deg) translate(140px)
+  @media only screen and (min-width: $breakpoint-phone)
+    .circleIcon2:nth-child(3)
+      transform: rotate(160deg) translate(150px)
+
+.bigger-rounder-image
+  .circleIcon2:nth-child(4)
+    transform: rotate(20deg) translate(140px)
+  @media only screen and (min-width: $breakpoint-phone)
+    .circleIcon2:nth-child(4)
+      transform: rotate(20deg) translate(150px)
+
+.rounded-image
+  width: 160px
+  height: 160px
+  border-radius: 50%
+  position: relative
+  overflow: hidden
+  left: 50%
+  top: 40%
+  transform: translate(-50%, -50%)
+  z-index: 3
+  @media only screen and (min-width: $breakpoint-phone)
+    width: 200px
+    height: 200px
+
+.gallery-img-container
+  width: 90%
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px
+  border-radius: 3px
+  overflow: hidden
+
+.gallery-img-container
+  img
+    transition: all 0.5s ease
+
+.gallery-img-container:hover
+  cursor: pointer
+
+.gallery-img-container:hover
+  img
+    filter: brightness(70%)
+    transition: all 1s ease
+.footer
+  position: relative
+  width: 100%
+  height: 400px
+
+.my-masonry-grid
+  // display: -webkit-box;
+  // display: -ms-flexbox; 
+  display: flex
+  margin-left: -30px
+  width: auto
+  @media only screen and (min-width: $breakpoint-phone)
+    margin-left: -20px
+
+.my-masonry-grid_column 
+  padding-left: 30px
+  background-clip: padding-box
+  @media only screen and (min-width: $breakpoint-phone)
+    padding-left: 20px
+
+
+/* Style your items */
+.my-masonry-grid_column 
+  .gallery-img-container 
+    /* change div to reference your elements you put in <Masonry> */
+    background: grey
+    margin-bottom: 30px
+  @media only screen and (min-width: $breakpoint-phone)
+    .gallery-img-container 
+      margin-bottom: 10px
+      background: grey
+
+.z_image_box
+  transform: rotate(45deg)
+  width: 300px
+  height: 300px
+  align-items: center
+  border-radius: 9px
+
+.z_image
+  transform: rotate(-90deg) translateX(130px) translateY(-90px)
+  filter: brightness(0.5)
+  transition: all 0.4s ease-in-out
+
+.z_image:hover
+  filter: brightness(0.9)
+  transition: all 0.4s ease-in-out
+
+.z_image_box2
+  transform: rotate(45deg) 
+  width: 200px
+  height: 200px
+  overflow: hidden
+  border-radius: 9px
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px
+  margin-top: 10px
+  margin-bottom: 10px
+  @media only screen and (min-width: $breakpoint-phone)
+    margin-top: 100px
+    margin-bottom: 100px
+
+.diagonal-split-background
+  background-color: #013A6B
+  background-image: -webkit-linear-gradient(60deg, #013A6B 50%, #004E95 50%)
+  z-index: 0
+
+.diagonal-split-background0
+  background-color: #fff
+  z-index: 2
+
+.container0
+  height: 100vh
+  width: 100vw
+  overflow: hidden
+  background-color: #ffffff
+  // background-image: -webkit-linear-gradient(60deg, #013A6B 50%, #004E95 50%)
+  z-index: 1
+  position: relative
+
+.triangle-top
+  width: 0
+  height: 0
+  // background-color: blue
+  border-bottom: 100vh solid  #ededed 
+  border-right: 100vw solid transparent
+  overflow: hidden
+  z-index: 2
+  position: relative
+
+.hidden
+  overflow: hidden
+  // position: relative
+  // width: 100%
+  // height: 100%
+
+.loginImages
+  position: absolute
+  top: 0
+  right: 0
+  // z-index: 1
+
+.loginDiv
+  z-index: 4
+  background-color: #f8f8f8 
+  padding-top: 40px
+  padding-bottom: 40px
+  padding-left: 30px
+  padding-right: 30px
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px
+  border-radius: 4px
+  width: 35vw
