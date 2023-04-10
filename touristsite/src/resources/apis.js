@@ -3,6 +3,8 @@ import axios from 'axios'
 
 
 // 35.180.135.175
+var hosturl = 'http://2a05:d01c:482:8500:ea7b:1553:fce4:b373:3000';
+// var hosturl = 'http://localhost:3000';
 
 class Api {
 	// async callAPI (module, params){
@@ -13,7 +15,7 @@ class Api {
 
 	async getUsers () {
 		console.log("getting registration details")
-		const response = await axios.get('http://localhost:3000/users/')
+		const response = await axios.get(`${hosturl}/users/`)
 
 		console.log(response)
         return response.data
@@ -25,7 +27,7 @@ class Api {
 
 		const config = {
 			method: 'post',
-			url: 'http://localhost:3000/login/',
+			url: `${hosturl}/login/`,
 			data: params,
 			// headers: {
 			// 	'X-CSRFTOKEN': cookie.load("csrftoken"),
@@ -43,7 +45,7 @@ class Api {
 	// Get requests
 	async getRequests () {
 		console.log("getting registration details")
-		const response = await axios.get('http://localhost:3000/requests/')
+		const response = await axios.get(`${hosturl}/requests/`)
 
 		console.log(response)
         return response
@@ -56,7 +58,7 @@ class Api {
 
 		const config = {
 			method: 'post',
-			url: 'http://localhost:3000/requests/',
+			url: `${hosturl}/requests/`,
 			data: params,
 			// headers: {
 			// 	'X-CSRFTOKEN': cookie.load("csrftoken"),
@@ -74,7 +76,7 @@ class Api {
 	// Get configurations
 	async getConfigurations () {
 		console.log("getting registration details")
-		const response = await axios.get('http://localhost:3000/configs/')
+		const response = await axios.get(`${hosturl}/configs/`)
 
 		console.log(response)
         return response
@@ -87,7 +89,7 @@ class Api {
 
 		const config = {
 			method: 'post',
-			url: 'http://localhost:3000/configs/',
+			url: `${hosturl}/configs/`,
 			data: params,
 			// headers: {
 			// 	'X-CSRFTOKEN': cookie.load("csrftoken"),
