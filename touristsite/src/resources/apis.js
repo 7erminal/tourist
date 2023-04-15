@@ -3,7 +3,7 @@ import axios from 'axios'
 
 
 // 35.180.135.175
-var hosturl = 'http://2a05:d01c:482:8500:ea7b:1553:fce4:b373:3000/';
+var hosturl = 'http://2a05:d01c:482:8500:ea7b:1553:fce4:b373:3000';
 // var hosturl = 'http://localhost:3000';
 
 class Api {
