@@ -25,7 +25,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({
   // origin: 'http://localhost:3001'
-    origin: 'http://18.168.239.227:3001'
+    origin: 'http://18.168.239.227:3001',
+    origin: 'http://18.168.239.227:3000',
 }));
 
 app.use('/', indexRouter);
