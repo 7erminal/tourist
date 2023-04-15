@@ -45,6 +45,7 @@ class Api {
 	// Get requests
 	async getRequests () {
 		console.log("getting registration details")
+		console.log(`${hosturl}/requests/`)
 		const response = await axios.get(`${hosturl}/requests/`)
 
 		console.log(response)
