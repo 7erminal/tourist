@@ -18,7 +18,25 @@ class Api {
 		const response = await axios.get(`${hosturl}/users/`)
 
 		console.log(response)
-        return response.data
+        return response
+	}
+
+	async addUser (params) {
+		const config = {
+			method: 'post',
+			url: `${hosturl}/users/`,
+			data: params,
+			// headers: {
+			// 	'X-CSRFTOKEN': cookie.load("csrftoken"),
+			// 	"Access-Control-Allow-Origin":"*",
+			// 	"accept": 'application/json',
+			// 	"Authorization": `Bearer ${localStorage.getItem("accessToken")}`
+			// }
+		}
+
+		const res = await axios(config)
+
+		return await res
 	}
 
 	// login
@@ -27,7 +45,28 @@ class Api {
 
 		const config = {
 			method: 'post',
-			url: `${hosturl}/login/`,
+			url: `${hosturl}/users/login/`,
+			data: params,
+			// headers: {
+			// 	'X-CSRFTOKEN': cookie.load("csrftoken"),
+			// 	"Access-Control-Allow-Origin":"*",
+			// 	"accept": 'application/json',
+			// 	"Authorization": `Bearer ${localStorage.getItem("accessToken")}`
+			// }
+		}
+
+		const res = await axios(config)
+
+		return await res
+	}
+
+	// update request
+	async update_request(params){
+		console.log("what is being sent")
+
+		const config = {
+			method: 'post',
+			url: `${hosturl}/requests/update-seen-status/`,
 			data: params,
 			// headers: {
 			// 	'X-CSRFTOKEN': cookie.load("csrftoken"),

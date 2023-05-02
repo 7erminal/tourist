@@ -73,4 +73,32 @@ router.post('/', function(req, res, next) {
   
 });
 
+/* POST update request seen status. */
+router.post('/update-seen-status', function(req, res, next) {
+  // res.send('respond with a resource');
+  res.header('Access-Control-Allow-Origin', "*")
+
+  console.log("Request ID received is "+req.body.requestid)
+
+  var sql = "UPDATE requests set status = 1 where request_id = (?)";
+  var values = [req.body.requestid]
+
+  connect.query(sql, [values], (err, result) => {
+    if (err) throw err
+
+    console.log('The solution is: ', result)
+
+    const responseData = {
+      statusCode: 200,
+      message: result.message,
+      requestId: result,
+    }
+    
+    res.send(responseData);
+  })
+
+  // connect.end();
+  
+});
+
 module.exports = router;

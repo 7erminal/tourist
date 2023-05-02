@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
@@ -8,6 +8,8 @@ import ContactDetails from '../components/ContactDetails';
 import CustomNavBar from '../components/NavBar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { ReactSession } from 'react-client-session';
+import { useNavigate } from "react-router-dom";
 
 const images = [
     '/images/06480f3c-b05e-445e-9474-30636dc685e4.JPG',
@@ -28,9 +30,30 @@ const images = [
 
 const Admin: React.FC = () => {
     const [showImages, setShowImages] = useState(true)
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('')
+
+    useEffect(()=>{
+        checkSession()
+    })
+
+    const checkSession = () => {
+       
+        const email_ = ReactSession.get("emailRSession");
+
+        console.log("Email is ")
+        console.log(email_)
+
+        if(email_=='' || email_ == undefined){
+            navigate("/login");
+        }
+
+        setEmail(email_)
+    }
 
     return <Container fluid>
         <CustomNavBar />
+        <h2>{email}</h2>
         <Tabs
         defaultActiveKey="profile"
         id="uncontrolled-tab-example"

@@ -1,18 +1,95 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import { ReactSession } from 'react-client-session';
+import Api from '../resources/apis';
+import { Dna } from  'react-loader-spinner'
+import { useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [loading, setLoading] = useState(false)
+    const [successStatus, setSuccessStatus] = useState('null')
+    const navigate = useNavigate();
+
+    const login_ = () => {
+        console.log("About to login")
+        console.log(email)
+        console.log(password)
+
+        setLoading(true)
+
+        // users.map((user,i)=>{
+        //     console.log("comparing "+username+" and password "+password)
+        //     console.log("with "+user[0]+" : "+user[1])
+        //     user[0] == username ? user[1] == password ? navigate('/dashboard') : showError('Invalid credentials') : showError('Username does not exist')
+        // }) 
+
+        const params = {
+            password: password, 
+            email: email,
+        }
+
+        new Api().login(params).then(response=>{
+            console.log("Getting data")
+            console.log(response)
+            console.log(response.status)
+
+            setLoading(false)
+
+            if(response.status == 200){
+                setSuccessStatus('success')
+                setPassword('')
+                setEmail('')
+
+               console.log("Successfully added request")
+
+               if(response.data.message == "Password matches"){
+
+                ReactSession.setStoreType("localStorage");
+                ReactSession.set("emailRSession", response.data.email);
+                ReactSession.set("nameRSession", response.data.name);
+
+                navigate("/admin");
+               }
+            }
+
+        }).catch(error => {
+            console.log("Error returned is ... ")
+            console.log(error)
+        })
+    }
+
+    const inputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		console.log(e.target.value)
+
+		console.log(e.target.getAttribute('name'))
+
+		switch(e.target.getAttribute('name')){
+			case 'email':
+				setEmail(e.target.value)
+				break;
+            case "password":
+                setPassword(e.target.value)
+                break;
+			default:
+				return null;
+		}
+    }
+
     return <div style={{position: 'relative', width: '100vw', height: '100vh'}}>
         <div className='centerDiv loginDiv'>
             <Form>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Label>Username</Form.Label>
-                    <Form.Control type="email" placeholder="name@example.com" />
+                    <Form.Control type="email" placeholder="Enter email" name='email' value={email} onChange={(e: React.ChangeEvent<HTMLInputElement>)=>inputChange(e)} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="email" placeholder="name@example.com" />
+                    <Form.Control type="password" placeholder="Enter password" name='password' value={password} onChange={(e: React.ChangeEvent<HTMLInputElement>)=>inputChange(e)} />
                 </Form.Group>
+                <Button variant="success" onClick={login_}>Login</Button>
         </Form>
         </div>
     <div className='container0'>
