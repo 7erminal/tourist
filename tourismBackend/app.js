@@ -24,9 +24,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({
-  origin: 'http://localhost:3001'
+  origin: 'http://localhost:3000',
     // origin: 'http://18.168.239.227:3001',
     // origin: 'http://18.168.239.227:3000',
+    origin: 'https://162.0.229.39:3000',
+    origin: 'https://162.0.229.39:3001',
+    origin: 'http://162.0.229.39:3000',
+    origin: 'https://162.0.229.39:3001',
+    origin: 'http://bekaadventure.com',
+    origin: 'https://bekaadventure.com',
 }));
 
 app.use('/', indexRouter);

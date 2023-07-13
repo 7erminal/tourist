@@ -6,6 +6,8 @@ import NotFoundPage from './pages/NotFoundPage'
 import { ROUTES } from './resources/routes-constants'
 import './styles/main.sass'
 import './styles/hex.css'
+import './styles/animate.min.css'
+import './styles/style2.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './pages/login'
 import Admin from './pages/admin'

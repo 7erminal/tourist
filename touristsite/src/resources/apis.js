@@ -3,8 +3,8 @@ import axios from 'axios'
 
 
 // 35.180.135.175
-var hosturl = 'http://18.168.239.227:3000';
-// var hosturl = 'http://localhost:3000';
+// var hosturl = 'http://18.168.239.227:3000';
+var hosturl = 'https://bekaadventure.com/api';
 
 class Api {
 	// async callAPI (module, params){

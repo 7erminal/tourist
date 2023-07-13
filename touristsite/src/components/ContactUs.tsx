@@ -157,7 +157,7 @@ const ContactUs: React.FC = () => {
                             <span className="fa fa-map-marker"></span>
                         </div>
                         <div className="text">
-                        <p><span>Address:</span> { systemAddress }</p>
+                        <p><span>Address:</span> { systemAddress != '' ? systemAddress : 'Tanzania' }</p>
                       </div>
                   </div>
                         </div>
@@ -167,7 +167,7 @@ const ContactUs: React.FC = () => {
                             <span className="fa fa-phone"></span>
                         </div>
                         <div className="text">
-                        <p><span>Phone:</span> <a href={"tel://"+systemNumber}>{ systemNumber }</a></p>
+                        <p><span>Phone:</span> <a href={"tel://"+systemNumber}>{ systemNumber != '' ? systemNumber : '+25578028485' }</a></p>
                       </div>
                   </div>
                         </div>
@@ -177,7 +177,7 @@ const ContactUs: React.FC = () => {
                             <span className="fa fa-paper-plane"></span>
                         </div>
                         <div className="text">
-                        <p><span>Email:</span> <a href={"mailto:"+systemEmail}>{ systemEmail }</a></p>
+                        <p><span>Email:</span> <a href={"mailto:"+systemEmail}>{ systemEmail != '' ? systemEmail : 'bekabakari900@gmail.com' }</a></p>
                       </div>
                   </div>
                         </div>
@@ -187,7 +187,7 @@ const ContactUs: React.FC = () => {
                             <span className="fa fa-globe"></span>
                         </div>
                         <div className="text">
-                        <p><span>Website</span> <a href="#">yoursite.com</a></p>
+                        <p><span>Website</span> <a href="https://www.bekaadventure.com">https://www.bekaadventure.com</a></p>
                       </div>
                   </div>
                         </div>

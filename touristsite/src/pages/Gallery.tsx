@@ -263,7 +263,7 @@ const Gallery: React.FC = () => {
               
                     <img src={modalImage} />
             </Modal>
-    <Footer />
+    <Footer scrollToView={scrollToView}/>
 </div>
 }
 

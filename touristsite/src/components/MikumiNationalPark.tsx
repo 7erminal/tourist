@@ -42,7 +42,7 @@ const Mikumi: React.FC<Props> = ({handleShow}) => {
     return <Row>
         <Row className='my-4'><h2>3DAYS AND 2NIGHTS  LODGE SAFARI FROM ZANZIBAR TO MIKUMI NATIONAL PARK</h2></Row>
         <Col md={{span: 6, order: 1}} sm={{span: 6, order: 1}} xs={{span: 12, order: 1}}>
-            <div style={{borderRadius: '9px', height: height1, width: '100%', backgroundImage: `url('/images/ea0f3ed8-b2ff-41e8-b53c-3b21d7bb9d37.JPG')`, backgroundPosition: 'center', backgroundSize: 'cover', boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px' }}></div>
+            <div style={{borderRadius: '9px', height: height1, width: '100%', backgroundImage: `url('/images/ec5c1af7-eee1-4a58-86b5-f6f17cfd9efb.JPG')`, backgroundPosition: 'center', backgroundSize: 'cover', boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px' }}></div>
         </Col>
         <Col md={{span: 6, order: 2}} sm={{span: 6, order: 2}} xs={{span: 12, order: 2}} ref={c1_height}>
         <p>

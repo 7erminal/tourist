@@ -115,7 +115,7 @@ const Information: React.FC<Props> = ({handleShow}) => {
                     DAY 06 (#hidden beach,#usumba rock & #kaebeachtrip for sunset)
                 </p>
                 <p>
-                    Pick up from your hotel to mtende beach to relax on the hidden beach, enjoy the scenery with beach view, hang out at usumba restaurant for lunch then kae fank beacg for view of the  sunset with lots of entertainment, after transfer to your hotel.
+                    Pick up from your hotel to mtende beach to relax on the hidden beach, enjoy the scenery with beach view, hang out at usumba restaurant for lunch then kae fank beach for view of the  sunset with lots of entertainment, after transfer to your hotel.
                 </p>
             </Col>
             <Col md={6} sm={12} xs={12}>
