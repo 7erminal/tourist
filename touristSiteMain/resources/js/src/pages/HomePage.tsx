@@ -19,6 +19,7 @@ import './../styles/hex.css'
 import './../styles/animate.min.css'
 import './../styles/style2.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Reviews from '../components/Reviews';
 
 
 const HomePage: React.FC = () => {
@@ -187,13 +188,7 @@ const HomePage: React.FC = () => {
                         <MoreInformation handleShow={handleShow} />
                     </Col>
                 </Row>
-                <Row style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'row', backgroundColor: '#f1f1f1'}}>
-                    <Col md={12} sm={12} xs={12} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                        <video controls width='100%' style={{borderRadius: '8px'}} preload="metadata" >
-                            <source src='/images/landingVIdeo.MP4#t=0.5' type="video/mp4" />
-                        </video>
-                    </Col>
-                </Row>
+                
                 <Row className="my-4" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', paddingTop: '40px'}}>
                     <div ref={zanzibarRefTag}></div>
                     <Col md={8} sm={12} className="my-4">
@@ -209,6 +204,7 @@ const HomePage: React.FC = () => {
                         <Mikumi handleShow={handleShow} />
                     </Col>
                 </Row>
+                <Reviews />
                 <ContactUs/>
             </Container>
             <Footer scrollToView={scrollToView}/>

@@ -176,7 +176,7 @@ const Gallery: React.FC = () => {
                     </video>
                 </div>
                 <div className='gallery-img-container'>
-                <video controls width='400px' preload="metadata">
+                <video controls autoPlay={true} loop={true} muted={false} width='400px' preload="metadata">
                         <source src={videos[2]} type="video/mp4" />
                     </video>
                 </div>

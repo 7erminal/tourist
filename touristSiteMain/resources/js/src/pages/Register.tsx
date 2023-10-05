@@ -58,6 +58,7 @@ const Register: React.FC = () => {
                     setEmail('')
                     setName('')
                     setUsername('')
+                    setConfirmPassword('')
     
                    console.log("Successfully added request")
     
@@ -72,6 +73,8 @@ const Register: React.FC = () => {
                 }
     
             }).catch(error => {
+                setLoading(false)
+                setSuccessStatus('failed')
                 console.log("Error returned is ... ")
                 console.log(error)
             })
@@ -93,9 +96,6 @@ const Register: React.FC = () => {
             case "password":
                 setPassword(e.target.value)
                 break;
-            case "password":
-                setPassword(e.target.value)
-                break;
             case "confirmPassword":
                 setConfirmPassword(e.target.value)
                 break;
@@ -112,6 +112,7 @@ const Register: React.FC = () => {
 
     return <div style={{position: 'relative', width: '100vw', height: '100vh'}}>
         <div className='centerDiv loginDiv'>
+        { successStatus=='success' ? <div id="form-message-success" className="mb-4" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center'}}>Successfully registered</div> : successStatus == 'failed' ? <div id="form-message-failed" className="mb-4" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center'}}>Something went wrong. Please wait a few seconds and try again.</div> : <></> }
             <Form>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Label>Name</Form.Label>
@@ -133,7 +134,16 @@ const Register: React.FC = () => {
                     <Form.Label>Confirm password</Form.Label>
                     <Form.Control type="password" placeholder="Confirm password" name='confirmPassword' value={confirmPassword} onChange={(e: React.ChangeEvent<HTMLInputElement>)=>inputChange(e)} />
                 </Form.Group>
-                <Button variant="success" onClick={register_}>Register</Button>
+                { loading == true ? 
+                            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center'}}><Dna
+                            visible={true}
+                            height="80"
+                            width="80"
+                            ariaLabel="dna-loading"
+                            wrapperStyle={{}}
+                            wrapperClass="dna-wrapper"
+                            /></div> : <Button variant="success" onClick={register_}>Register</Button>
+                }
         </Form>
         </div>
     <div className='container0'>

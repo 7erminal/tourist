@@ -16,6 +16,7 @@ import './../styles/animate.min.css'
 import './../styles/style2.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createRoot } from 'react-dom/client'
+import AdminReviews from '../components/AdminReviews';
 
 const images = [
     '/images/06480f3c-b05e-445e-9474-30636dc685e4.JPG',
@@ -81,6 +82,11 @@ const Admin: React.FC = () => {
             <Row className="my-4"><Col className="my-4 mx-4"><h1>Admin Portal</h1></Col></Row>
             <Row className="my-4" style={{textAlign: 'center'}}><Col className="my-4"><h3>Users</h3></Col></Row>
            <Users />
+        </Tab>
+        <Tab eventKey="reviews" title="Reviews" onClick={()=>setShowImages(false)}>
+            <Row className="my-4"><Col className="my-4 mx-4"><h1>Admin Portal</h1></Col></Row>
+            <Row className="my-4" style={{textAlign: 'center'}}><Col className="my-4"><h3>Reviews</h3></Col></Row>
+           <AdminReviews />
         </Tab>
         <Tab eventKey="contact" title="Contact" onClick={()=>setShowImages(false)}>
             <Row className="my-4"><Col className="my-4 mx-4"><h1>Admin Portal</h1></Col></Row>

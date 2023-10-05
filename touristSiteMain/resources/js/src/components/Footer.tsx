@@ -34,7 +34,8 @@ const Footer: React.FC<Props> = ({scrollToView}) => {
     }
 
     useEffect(()=>{
-        getToken()
+        getConfigurations()
+        // getToken()
     },[])
 
     useEffect(()=>{
@@ -136,7 +137,7 @@ const Footer: React.FC<Props> = ({scrollToView}) => {
     <div className="footer-bottom">
         <div className="container">
             <div className="branding pull-left">
-                <img src="/images/images/logo-footer.png" alt="Company Name" className="logo" />
+                <img src="/images/logo-footer.png" alt="Company Name" className="logo" />
                 <h1 className="site-title"><a href="/">Beka Adventure</a></h1>
                 <small className="site-description">Tour Tanzania</small>
             </div>

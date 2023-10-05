@@ -25,24 +25,19 @@ const CustomNavBar: React.FC = () => {
       // navigate("/admin");
     }
   
-    return <Navbar bg="light" variant="light">
-    <Container>
-      <Navbar.Brand href="#home"></Navbar.Brand>
+    return <Navbar expand="lg" bg="light" variant="light">
+  <Container className='mx-2'>
+    <Navbar.Brand href="/"><img src="/images/logo.png" /></Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" className='ml-auto'/>
+    <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mx-auto">
-        <Nav.Link className="mx-4" href="#home"><a href="/" className="navLink">Home</a></Nav.Link>
-        <Nav.Link className="mx-4" href="#gallery"><a href="/gallery" className="navLink">Gallery</a></Nav.Link>
-        <Nav.Link className="mx-4" href="#about">About</Nav.Link>
-        <Nav.Link className="mx-4" href="#pricing">Pricing</Nav.Link>
+        <Nav.Link href="/" className='mx-1'>Home</Nav.Link>
+        <Nav.Link href="/gallery" className='mx-1'>Gallery</Nav.Link>
+        <Nav.Link href="/" className='mx-1'>About</Nav.Link>
       </Nav>
-      {
-        email != undefined || email != '' ? 
-        <Nav>
-          <Nav.Link className="mx-4" href="#logout" onClick={logout}>Logout</Nav.Link>
-        </Nav>
-        : ''
-      }
-    </Container>
-  </Navbar>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
 }
 
 export default CustomNavBar

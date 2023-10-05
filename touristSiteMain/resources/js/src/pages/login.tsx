@@ -20,9 +20,9 @@ const Login: React.FC = () => {
     // const navigate = useNavigate();
 
     const login_ = () => {
-        console.log("About to login")
+        console.log("About to login. Using the details: ")
         console.log(email)
-        console.log(password)
+        // console.log(password)
 
         setLoading(true)
 
@@ -45,11 +45,12 @@ const Login: React.FC = () => {
             setLoading(false)
 
             if(response.status == 200){
-                setSuccessStatus('success')
+                
 
                console.log("Successfully added request")
 
                if(response.status == 200){
+                setSuccessStatus('success')
                 console.log("Successful login")
                 console.log(response.data)
 
@@ -68,6 +69,8 @@ const Login: React.FC = () => {
             }
 
         }).catch(error => {
+            setLoading(false)
+            setSuccessStatus('failed')
             console.log("Error returned is ... ")
             console.log(error)
         })
@@ -96,6 +99,7 @@ const Login: React.FC = () => {
 
     return <div style={{position: 'relative', width: '100vw', height: '100vh'}}>
         <div className='centerDiv loginDiv'>
+        {successStatus == 'success' ? <div id="form-message-success" className="mb-4" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center'}}>Success</div> : successStatus == 'failed' ? <div id="form-message-failed" className="mb-4" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center'}}>Something went wrong. Please wait a few seconds and try again.</div> : <></> }
             <Form>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Label>Username</Form.Label>
@@ -105,7 +109,16 @@ const Login: React.FC = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Enter password" name='password' value={password} onChange={(e: React.ChangeEvent<HTMLInputElement>)=>inputChange(e)} />
                 </Form.Group>
-                <Button variant="success" onClick={login_}>Login</Button>
+                { loading == true ? 
+                            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center'}}><Dna
+                            visible={true}
+                            height="80"
+                            width="80"
+                            ariaLabel="dna-loading"
+                            wrapperStyle={{}}
+                            wrapperClass="dna-wrapper"
+                            /></div> : <Button variant="success" onClick={login_}>Login</Button>
+                }
         </Form>
         </div>
     <div className='container0'>

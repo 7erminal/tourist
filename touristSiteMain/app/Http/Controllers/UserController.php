@@ -64,13 +64,25 @@ class UserController extends Controller
             ]);
 
             Log::debug('created');
+
+            $response = [
+                'success' => true,
+                'data'    => "User Created",
+                'message' => "Success",
+            ];
         } catch (Exception $e){
             Log::debug('Exception');
             Log::debug($e);
+
+            $response = [
+                'success' => true,
+                'data'    => "Error creating user: ".$e,
+                'message' => "Success",
+            ];
         }
 
         Auth::login($user);
 
-        return response()->noContent();
+        return response()->json($response, 200);
     }
 }

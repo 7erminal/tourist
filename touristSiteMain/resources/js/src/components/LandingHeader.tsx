@@ -153,7 +153,7 @@ const LandingHeader: React.FC<Props> = ({handleShow}) => {
         </div></Fade>
       </li>
     </ul>
-      </div>
+      </div>  
 }
 
 export default LandingHeader

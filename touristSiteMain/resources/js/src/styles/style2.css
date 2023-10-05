@@ -803,7 +803,6 @@ table {
 .contact-form {
   margin-top: 50px;
   margin-bottom: 50px;
-  *zoom: 1;
 }
 .contact-form:after {
   content: " ";
@@ -924,7 +923,6 @@ table {
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
-  *zoom: 1;
 }
 .container:after, .slider .flexslider-controls .flex-control-nav:after {
   content: " ";
@@ -959,7 +957,6 @@ table {
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
-  *zoom: 1;
 }
 .container-fluid:after {
   content: " ";
@@ -972,7 +969,6 @@ table {
 .row {
   margin-left: -15px;
   margin-right: -15px;
-  *zoom: 1;
 }
 .row:after {
   content: " ";
@@ -2080,7 +2076,6 @@ body {
   background: white;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  *zoom: 1;
 }
 .site-header .header-content:after {
   content: " ";
@@ -2261,7 +2256,6 @@ body {
   list-style: none;
   padding-left: 0;
   margin: 0;
-  *zoom: 1;
 }
 .slider .slides:after {
   content: " ";

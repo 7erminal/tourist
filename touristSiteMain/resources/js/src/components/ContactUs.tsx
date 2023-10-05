@@ -53,6 +53,8 @@ const ContactUs: React.FC = () => {
             }
 
         }).catch(error => {
+            setLoading(false)
+            setSuccessStatus('failed')
             console.log("Error returned is ... ")
             console.log(error)
         })
@@ -115,7 +117,8 @@ const ContactUs: React.FC = () => {
     }
 
     useEffect(()=>{
-        getToken()
+        getConfigurations()
+        // getToken()
     },[])
 
     useEffect(()=>{
@@ -169,127 +172,129 @@ const ContactUs: React.FC = () => {
                 <div className="col-md-6 text-center mb-5">
                     <h2 className="heading-section">Contact Us</h2>
                 </div>
-        </div>
-        <div className="row justify-content-center">
-            <div className="col-md-12">
-                <div className="wrapper">
-                    <div className="row mb-5">
-                        <div className="col-md-3">
-                            <div className="dbox w-100 text-center">
-                        <div className="icon d-flex align-items-center justify-content-center">
-                            <span className="fa fa-map-marker"></span>
-                        </div>
-                        <div className="text">
-                        <p><span>Address:</span> { systemAddress != '' ? systemAddress : 'Tanzania' }</p>
-                      </div>
-                  </div>
-                        </div>
-                        <div className="col-md-3">
-                            <div className="dbox w-100 text-center">
-                        <div className="icon d-flex align-items-center justify-content-center">
-                            <span className="fa fa-phone"></span>
-                        </div>
-                        <div className="text">
-                        <p><span>Phone:</span> <a href={"tel://"+systemNumber}>{ systemNumber != '' ? systemNumber : '+25578028485' }</a></p>
-                      </div>
-                  </div>
-                        </div>
-                        <div className="col-md-3">
-                            <div className="dbox w-100 text-center">
-                        <div className="icon d-flex align-items-center justify-content-center">
-                            <span className="fa fa-paper-plane"></span>
-                        </div>
-                        <div className="text">
-                        <p><span>Email:</span> <a href={"mailto:"+systemEmail}>{ systemEmail != '' ? systemEmail : 'bekabakari900@gmail.com' }</a></p>
-                      </div>
-                  </div>
-                        </div>
-                        <div className="col-md-3">
-                            <div className="dbox w-100 text-center">
-                        <div className="icon d-flex align-items-center justify-content-center">
-                            <span className="fa fa-globe"></span>
-                        </div>
-                        <div className="text">
-                        <p><span>Website</span> <a href="https://www.bekaadventure.com">https://www.bekaadventure.com</a></p>
-                      </div>
-                  </div>
+            </div>
+            <div className="row justify-content-center">
+                <div className="col-md-12">
+                    <div className="wrapper">
+                        <div className="row mb-5">
+                            <div className="col-md-3">
+                                <div className="dbox w-100 text-center">
+                            <div className="icon d-flex align-items-center justify-content-center">
+                                <span className="fa fa-map-marker"></span>
+                            </div>
+                            <div className="text">
+                            <p><span>Address:</span> { systemAddress != '' ? systemAddress : 'Tanzania' }</p>
                         </div>
                     </div>
-                    <div className="row no-gutters">
-                        <div className="col-md-7">
-                            <div className="contact-wrap w-100 p-md-5 p-4">
-                                <h3 className="mb-4">Contact Us</h3>
-                                <div id="form-message-warning" className="mb-4"></div> 
-                          {
-                            successStatus == 'success' ? <div id="form-message-success" className="mb-4">
-                        Your message was sent, thank you!
-                          </div> : loading == true ? 
-                          <Dna
-                          visible={true}
-                          height="80"
-                          width="80"
-                          ariaLabel="dna-loading"
-                          wrapperStyle={{}}
-                          wrapperClass="dna-wrapper"
-                        /> : ''
-                          }
-                                <form method="POST" id="contactForm" name="contactForm" className="contactForm">
-                                    <div className="row">
-                                        <div className="col-md-6">
-                                            <div className="form-group">
-                                                <label className="label" htmlFor="name">Full Name</label>
-                                                <input type="text" className="form-control" name="name" id="name" placeholder="Name" value={name} onChange={(e: React.ChangeEvent<HTMLInputElement>)=>inputChange(e)} />
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6"> 
-                                            <div className="form-group">
-                                                <label className="label" htmlFor="email">Email Address</label>
-                                                <input type="email" className="form-control" name="email" id="email" placeholder="Email" value={email} onChange={(e: React.ChangeEvent<HTMLInputElement>)=>inputChange(e)} />
-                                            </div>
-                                        </div>
-                                        <div className="col-md-12">
-                                            <div className="form-group">
-                                                <label className="label" htmlFor="subject">Contact Number</label>
-                                                <input type="text" className="form-control" name="contact_number" id="contact-number" value={contact_number} placeholder="Contact Number" onChange={(e: React.ChangeEvent<HTMLInputElement>)=>inputChange(e)} />
-                                            </div>
-                                        </div>
-                                        <div className="col-md-12">
-                                            <div className="form-group">
-                                                <label className="label" htmlFor="subject">Place of Interest</label>
-                                                <Form.Select className="form-control" aria-label="Default select example" name="place_of_interest" onChange={(e: React.ChangeEvent<HTMLSelectElement>)=>selectInputChange(e)}>
-                                                    <option value="0">Select Place of Interest</option>
-                                                    <option value="0">GENERAL</option>
-                                                    <option value="1">BEKA ZANZIBAR TOUR AND SAFARI</option>
-                                                    <option value="2">SAFARI TO SERENGETI AND NGORONGORO</option>
-                                                    <option value="3">ZANZIBAR PACKAGE</option>
-                                                    <option value="4">MIKUMI NATIONAL PARK</option>
-                                                </Form.Select>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-12">
-                                            <div className="form-group">
-                                                <label className="label" htmlFor="#">Message</label>
-                                                <Form.Control name="message" as="textarea" rows={3} onChange={(e: React.ChangeEvent<HTMLInputElement>)=>inputChange(e)} value={message} />
-                                            </div>
-                                        </div>
-                                        <div className="col-md-12">
-                                            <div className="form-group">
-                                                <input type="button" value="Send Message" className="btn btn-primary" onClick={sendRequest} />
-                                                <div className="submitting"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
+                            </div>
+                            <div className="col-md-3">
+                                <div className="dbox w-100 text-center">
+                            <div className="icon d-flex align-items-center justify-content-center">
+                                <span className="fa fa-phone"></span>
+                            </div>
+                            <div className="text">
+                            <p><span>Phone:</span> <a href={"tel://"+systemNumber}>{ systemNumber != '' ? systemNumber : '+25578028485' }</a></p>
+                        </div>
+                    </div>
+                            </div>
+                            <div className="col-md-3">
+                                <div className="dbox w-100 text-center">
+                            <div className="icon d-flex align-items-center justify-content-center">
+                                <span className="fa fa-paper-plane"></span>
+                            </div>
+                            <div className="text">
+                            <p><span>Email:</span> <a href={"mailto:"+systemEmail}>{ systemEmail != '' ? systemEmail : 'bekabakari900@gmail.com' }</a></p>
+                        </div>
+                    </div>
+                            </div>
+                            <div className="col-md-3">
+                                <div className="dbox w-100 text-center">
+                            <div className="icon d-flex align-items-center justify-content-center">
+                                <span className="fa fa-globe"></span>
+                            </div>
+                            <div className="text">
+                            <p><span>Website</span> <a href="https://www.bekaadventure.com">https://www.bekaadventure.com</a></p>
+                        </div>
+                    </div>
                             </div>
                         </div>
-                        <div className="col-md-5 d-flex align-items-stretch">
-                            <div className="info-wrap w-100 p-5 img" style={{backgroundImage: `url('/images/img.jpg')`}}>
+                        <div className="row no-gutters">
+                            <div className="col-md-7">
+                                <div className="contact-wrap w-100 p-md-5 p-4">
+                                    <h3 className="mb-4">Contact Us</h3>
+                                    <div id="form-message-warning" className="mb-4"></div> 
+                            {
+                                successStatus == 'success' ? <div id="form-message-success" className="mb-4">
+                            Your message was sent, thank you!
+                            </div> : successStatus == 'failed' ? <div id="form-message-failed" className="mb-4" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center'}}>Something went wrong. Please wait a few seconds and try again.</div> : <></>
+                            }
+                            { loading == true ? 
+                            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center'}}><Dna
+                            visible={true}
+                            height="80"
+                            width="80"
+                            ariaLabel="dna-loading"
+                            wrapperStyle={{}}
+                            wrapperClass="dna-wrapper"
+                            /></div> : ''
+                            }
+                                    <form method="POST" id="contactForm" name="contactForm" className="contactForm">
+                                        <div className="row">
+                                            <div className="col-md-6">
+                                                <div className="form-group">
+                                                    <label className="label" htmlFor="name">Full Name</label>
+                                                    <input type="text" className="form-control" name="name" id="name" placeholder="Name" value={name} onChange={(e: React.ChangeEvent<HTMLInputElement>)=>inputChange(e)} />
+                                                </div>
+                                            </div>
+                                            <div className="col-md-6"> 
+                                                <div className="form-group">
+                                                    <label className="label" htmlFor="email">Email Address</label>
+                                                    <input type="email" className="form-control" name="email" id="email" placeholder="Email" value={email} onChange={(e: React.ChangeEvent<HTMLInputElement>)=>inputChange(e)} />
+                                                </div>
+                                            </div>
+                                            <div className="col-md-12">
+                                                <div className="form-group">
+                                                    <label className="label" htmlFor="subject">Contact Number</label>
+                                                    <input type="text" className="form-control" name="contact_number" id="contact-number" value={contact_number} placeholder="Contact Number" onChange={(e: React.ChangeEvent<HTMLInputElement>)=>inputChange(e)} />
+                                                </div>
+                                            </div>
+                                            <div className="col-md-12">
+                                                <div className="form-group">
+                                                    <label className="label" htmlFor="subject">Place of Interest</label>
+                                                    <Form.Select className="form-control" aria-label="Default select example" name="place_of_interest" onChange={(e: React.ChangeEvent<HTMLSelectElement>)=>selectInputChange(e)}>
+                                                        <option value="0">Select Place of Interest</option>
+                                                        <option value="0">GENERAL</option>
+                                                        <option value="1">BEKA ZANZIBAR TOUR AND SAFARI</option>
+                                                        <option value="2">SAFARI TO SERENGETI AND NGORONGORO</option>
+                                                        <option value="3">ZANZIBAR PACKAGE</option>
+                                                        <option value="4">MIKUMI NATIONAL PARK</option>
+                                                    </Form.Select>
+                                                </div>
+                                            </div>
+                                            <div className="col-md-12">
+                                                <div className="form-group">
+                                                    <label className="label" htmlFor="#">Message</label>
+                                                    <Form.Control name="message" as="textarea" rows={3} onChange={(e: React.ChangeEvent<HTMLInputElement>)=>inputChange(e)} value={message} />
+                                                </div>
+                                            </div>
+                                            <div className="col-md-12">
+                                                <div className="form-group">
+                                                    <input type="button" value="Send Message" className="btn btn-primary" onClick={sendRequest} />
+                                                    <div className="submitting"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div className="col-md-5 d-flex align-items-stretch info-wrap">
+                                <div className="w-100 p-5 img" style={{backgroundImage: `url('/images/img.jpg')`}}>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </section>
 }

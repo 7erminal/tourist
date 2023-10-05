@@ -14,32 +14,35 @@ const ZanzibarPackage: React.FC<Props> = ({handleShow}) => {
         </Col>
         <Col md={12} sm={12}>
             <Row style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'row', paddingTop: '10px', paddingBottom: '10px'}}>
-                <Col md={4} sm={6} xs={6}>
+                <Col md={4} sm={6} xs={6} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                     {/* <Fade duration={1000}> */}
+                    <Fade delay={300} direction='right'>
                         <div className='z_image_box2'>
                             <div className='z_image_box'>
-                                <div className='z_image' onClick={()=>handleShow('/images/dabbc626-a376-406c-acd2-13057199bf97.JPG')} style={{borderRadius: '9px', height: '180%', width: '150%', backgroundImage: `url('/images/dabbc626-a376-406c-acd2-13057199bf97.JPG')`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
+                                <div className='z_image' onClick={()=>handleShow('/images/dabbc626-a376-406c-acd2-13057199bf97.JPG')} style={{borderRadius: '9px', height: '100%', width: '100%', backgroundImage: `url('/images/dabbc626-a376-406c-acd2-13057199bf97.JPG')`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
                             </div>
                         </div>
-                    {/* </Fade> */}
+                    </Fade>
                 </Col>
-                <Col md={4} sm={6} xs={6}>
+                <Col md={4} sm={6} xs={6} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                     {/* <Fade duration={1000}> */}
+                    <Fade delay={600} direction='right'>
                         <div className='z_image_box2'>
                             <div className='z_image_box'>
-                                <div className='z_image' onClick={()=>handleShow('/images/1c67d251-a14d-4b90-9706-50d847578571.JPG')} style={{borderRadius: '9px', height: '180%', width: '150%', backgroundImage: `url('/images/1c67d251-a14d-4b90-9706-50d847578571.JPG')`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
+                                <div className='z_image' onClick={()=>handleShow('/images/1c67d251-a14d-4b90-9706-50d847578571.JPG')} style={{borderRadius: '9px', height: '100%', width: '100%', backgroundImage: `url('/images/1c67d251-a14d-4b90-9706-50d847578571.JPG')`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
                             </div>
                         </div>
-                    {/* </Fade> */}
+                    </Fade>
                 </Col>
-                <Col md={4} sm={6} xs={6} >
+                <Col md={4} sm={6} xs={6} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                     {/* <Fade duration={1000}> */}
+                    <Fade delay={900} direction='right'>
                         <div className='z_image_box2'>
                             <div className='z_image_box'>
-                                <div className='z_image' onClick={()=>handleShow('/images/7e0c5ba8-b090-4f73-8968-bdc6f3aad73e.JPG')} style={{borderRadius: '9px', height: '180%', width: '150%', backgroundImage: `url('/images/7e0c5ba8-b090-4f73-8968-bdc6f3aad73e.JPG')`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
+                                <div className='z_image' onClick={()=>handleShow('/images/7e0c5ba8-b090-4f73-8968-bdc6f3aad73e.JPG')} style={{borderRadius: '9px', height: '100%', width: '100%', backgroundImage: `url('/images/7e0c5ba8-b090-4f73-8968-bdc6f3aad73e.JPG')`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
                             </div>
                         </div>
-                    {/* </Fade> */}
+                    </Fade>
                 </Col>
             </Row>
         </Col>

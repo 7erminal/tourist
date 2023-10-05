@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { useParallax } from 'react-scroll-parallax';
 import { Fade } from "react-awesome-reveal"
 
 type Props = {
@@ -64,7 +63,7 @@ const MoreInformation: React.FC<Props> = ({handleShow}) => {
                         </Col>
                     </Row>
                 </Col>
-                <Col md={{span: 7}} sm={{span: 12}} xs={{span: 12}}>
+                <Col className='mt-2' md={{span: 7}} sm={{span: 12}} xs={{span: 12}}>
                     <p>
                         <b>Day 1</b>:Pick up from arusha Airport  then drive to Game Drives in Serengeti National Park
 Early Morning leaving from Arusha to Serengeti. The name Serengeti originates from the Masai word Siringitu and means “endless plains”. You will see why the Maasai gave this region this name as the grassland savannah stretches to the horizon in the South and is only interrupted by the so-called kopjes. These kopjes are bizarre rock formations formed by the weathering of granite outcrops. The plains are the perfect hunting grounds for leopards and other big cats; you will have a good chance to view these magnificent creatures in their natural habitat through the open roof of the vehicle. In the afternoon, you will reach the destination for the day, the Seronera Valley in the central Serengeti area. You will camp for the night and stay in “safari styled” tents enjoying a good African meal in the middle of the African bush. 
